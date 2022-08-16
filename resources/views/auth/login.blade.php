@@ -54,12 +54,12 @@ border-bottom-right-radius: .3rem;
 
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
-                  <p>Please login to your account</p>
+                  <p>Entrar com a sua conta</p>
 
                   <div class="form-outline mb-4">
                     <input type="email" id="form2Example11" class="form-control @error('email') is-invalid @enderror"
                       placeholder="Phone number or email address" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus/>
-                    <label class="form-label" for="form2Example11">Username</label>
+                    <label class="form-label" for="form2Example11">Email da Instituição</label>
 
                     @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -70,7 +70,7 @@ border-bottom-right-radius: .3rem;
 
                   <div class="form-outline mb-4">
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                    <label class="form-label" for="form2Example22">Password</label>
+                    <label class="form-label" for="form2Example22">Sua Senha</label>
                     @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -79,24 +79,14 @@ border-bottom-right-radius: .3rem;
                    
                   </div>
 
-                  <div class="form-group row">
-                    <div class="col-md-6 offset-md-4">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                            <label class="form-check-label" for="remember">
-                                {{ __('Remember Me') }}
-                            </label>
-                        </div>
-                    </div>
-                </div>
+             
 
                   <div class="d-flex align-items-center justify-content-center pb-4">
-                    <p class="mb-0 me-2">Don't have an account?</p>
+                    
                    
 
                     <button type="submit" class="btn btn-outline-danger">
-                        {{ __('Login') }}
+                       Entrar
                     </button>
                   </div>
 
@@ -106,10 +96,11 @@ border-bottom-right-radius: .3rem;
             </div>
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <h4 class="mb-4">We are more than just a company</h4>
-                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h4 class="mb-4">Seja bem-vindo ao Sistema Integrado de Serviço do SME</h4>
+                <p class="small mb-0">Este sistema foi desenvolvido com a finalidade de comunicação com outros sistemas de diferentes
+                  plataformas, não importa  a línguagem de programação em que seu sistema foi desenvolvido, este sistema oferece métodos para consumo de muitos
+                  micro-serviços do SME.
+                </p>
               </div>
             </div>
           </div>

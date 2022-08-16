@@ -47,51 +47,12 @@
     <!--    Main Content-->
     <!-- ===============================================-->
     <main class="main" id="top">
-      <nav class="navbar navbar-expand-lg fixed-top navbar-dark" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand" href="{{('/')}}"><img src="assets/img/Logo.png" alt="" /></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-solid fa-bars text-white fs-3"></i></button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-              <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('registar_utilizadore')}}">Registar Utilizadores</a></li>
-              <li class="nav-item"><a class="nav-link" aria-current="page" href="{{asset('Adicionar_servico_utilizadore')}}">Associar Serviço</a></li>
-              <li class="nav-item"><a class="nav-link" aria-current="page" href="blogs.html">Serviços</a></li>
-              
-           
-              <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+     
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      @component('componente_header')
+      @endcomponent
+     
       <div class="bg-dark"><img class="img-fluid position-absolute end-0" src="assets/img/hero/hero-bg.png" alt="" />
 
 
@@ -102,12 +63,31 @@
           <div class="container">
             <div class="row align-items-center py-lg-8 py-6">
               <div class="col-lg-6 text-center text-lg-start">
-                <h1 class="text-white fs-5 fs-xl-6">Save time by building fast with Boldo Template</h1>
-                <p class="text-white py-lg-3 py-2">Funding handshake buyer business-to-business metrics iPad partnership. First mover advantage innovator success deployment non-disclosure.</p>
-                <div class="d-sm-flex align-items-center gap-3">
-                  <button class="btn btn-success text-black mb-3 w-75">Buy Template</button>
-                  <button class="btn btn-outline-light mb-3 w-75">Explore</button>
-                </div>
+                <h1 class="text-white fs-5 fs-xl-6">Serviços</h1>
+               
+            <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Nome da Intituição</th>
+      <th scope="col">Email da Instituição</th>
+      <th scope="col">Serviço</th>
+     
+     
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($users as $us)
+    <tr>
+     
+      <td>{{$us->name}}</td>
+      <td>{{$us->email}}</td>
+      <td>{{$us->nome_servico}}</td>
+    
+    </tr>
+   @endforeach
+  </tbody>
+</table>
+                
               </div>
               <div class="col-lg-6 text-center text-lg-end mt-3 mt-lg-0"><img class="img-fluid" src="assets/img/hero/hero-graphics.png" alt="" /></div>
             </div>
