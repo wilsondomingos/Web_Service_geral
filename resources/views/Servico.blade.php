@@ -63,30 +63,30 @@
           <div class="row justify-content-center">
             <div class="col-md-8">
               <div class="">
-               
-    <form class="col-12 m-auto" action="{{asset('Cadastrar_Associacao_usre_servico')}}" method="POST">
 
-      @csrf()
+                <form class="col-12 m-auto" action="{{asset('Cadastrar_Associacao_usre_servico')}}" method="POST">
 
-               
-                
-                <div class="form-check text-white">
-                  <label for="servico">Serviços</label>
-                  @foreach($Servico as $serv)
-                  <br>
-                  <input class="form-check-input text-white @error('servico')is-invalid @enderror" name="servico[]"
-                    type="checkbox" value="{{$serv->id}}" id="defaultCheck1" multiple>
-                 <b class="text-white ">{{$serv->nome_servico}}</b> 
-                  @endforeach
-                  @error('servico')
-                  <div class="invalid-feedback">
-                    {{$message}}
+                  @csrf()
+
+
+
+                  <div class="form-check text-white">
+                    <label for="servico">Serviços</label>
+                    @foreach($Servico as $serv)
+                    <br>
+                    <input class="form-check-input text-white @error('servico')is-invalid @enderror" name="servico[]"
+                      type="checkbox" value="{{$serv->id}}" id="defaultCheck1" multiple>
+                    <b class="text-white ">{{$serv->nome_servico}}</b>
+                    @endforeach
+                    @error('servico')
+                    <div class="invalid-feedback">
+                      {{$message}}
+                    </div>
+                    @enderror
                   </div>
-                  @enderror
-                </div>
-                <input type="hidden" name="user" value="{{$user}}">
-                <button type="submit" class="btn btn-primary mt-5 btn-sm">Associar</button>
-              </form>
+                  <input type="hidden" name="user" value="{{$user}}">
+                  <button type="submit" class="btn btn-primary mt-5 btn-sm">Associar</button>
+                </form>
       </section>
 
       <script src="vendors/popper/popper.min.js"></script>

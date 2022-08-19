@@ -9,11 +9,15 @@ class SeederUser extends Seeder
      *
      * @return void
      */
+
+
+     
     public function run()
     {
         DB::table('users')->insert([
-            "name"=>"Wilson Mateus Domingos",
+            "name"=>"wildondomingos",
             "email"=>"wilson.md@hotmail.com",
+            "nome_institicao"=>'Wilson Mateus Domingos',
             "password"=>Hash::make('wilson88'),
             "papal_id"=>1,
            
