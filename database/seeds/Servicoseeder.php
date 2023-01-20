@@ -16,5 +16,7 @@ class Servicoseeder extends Seeder
         DB::table('servicos')->insert(["nome_servico"=>"PASSAPORTE"]);
         DB::table('servicos')->insert(["nome_servico"=>"Movimentos Migratorio"]);
         DB::table('servicos')->insert(["nome_servico"=>"Lista Negra"]);
+        DB::table('servicos')->insert(["nome_servico"=>"Agendamento Passaporte"]);
+        DB::table('servicos')->insert(["nome_servico"=>"Movimento Migratorio"]);
     }
 }
