@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('registar_utilizadore', 'ControllerUtilizador@registar_utilizadore')->name('registar_utilizadore')->Middleware('auth');
 Route::get('Adicionar_servico_utilizadore', 'ControllerUtilizador@Adicionar_servico_utilizadore')->name('Adicionar_servico_utilizadore')->Middleware('auth');
-
+Route::get('token', 'ControllerUtilizador@token')->name('token')->Middleware('auth');
 Route::post('register_utilizador', 'ControllerUtilizador@register_utilizador')->name('register_utilizador')->Middleware('auth');
 Route::get('associar_utilizadores/{id}', 'ControllerUtilizador@Associar')->Middleware('auth');
 Route::post('Cadastrar_Associacao_usre_servico', 'ControllerUtilizador@Cadastrar_Associacao_usre_servico')->Middleware('auth');

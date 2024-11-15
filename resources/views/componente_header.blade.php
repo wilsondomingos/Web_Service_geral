@@ -56,6 +56,7 @@
                 @if(Auth::user()->papal_id==1)
               <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('registar_utilizadore')}}">Registar utilizadores</a></li>
               <li class="nav-item"><a class="nav-link" aria-current="page" href="{{asset('Adicionar_servico_utilizadore')}}">Associar serviço</a></li>
+              <li class="nav-item"><a class="nav-link" aria-current="page" href="{{asset('token')}}">Token</a></li>
               @endif
               
            
