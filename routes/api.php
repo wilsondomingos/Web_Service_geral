@@ -21,7 +21,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::prefix('v1')->namespace('Api')->group(function(){
     Route:: post('login','Auth\\LoginJwtController@login')->name('login');
-    Route::prefix('passaporte')->name('passaporte')->group(function(){
-        Route::post('/pesquisar',' @PequisarPassaporte')->Middleware('auth.basic');
+
+     
+    Route::group(['middleware'=>['jwt.auth']], function(){
+       
+            Route::post('/passaporte','PassaporteController@PequisarPassaporte');
+     
     });
+   
+
 });
