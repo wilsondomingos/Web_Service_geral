@@ -54,12 +54,13 @@ border-bottom-right-radius: .3rem;
 
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
-                  <p>Entrar com a sua conta</p>
+                
 
                   <div class="form-outline mb-4">
+                  <label class="form-label" for="form2Example11">Email </label>
                     <input type="email" id="form2Example11" class="form-control @error('email') is-invalid @enderror"
-                      placeholder="Phone number or email address" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus/>
-                    <label class="form-label" for="form2Example11">Email da Instituição</label>
+                      placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus/>
+                   
 
                     @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -69,8 +70,9 @@ border-bottom-right-radius: .3rem;
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                    <label class="form-label" for="form2Example22">Sua Senha</label>
+                  <label class="form-label" for="form2Example22">Senha</label>
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"  placeholder="***********">
+                   
                     @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

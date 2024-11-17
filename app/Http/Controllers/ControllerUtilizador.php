@@ -130,9 +130,7 @@ class ControllerUtilizador extends Controller
       return view('welcome');
     }
 
-    public function token(){
-      return view('token');
-    }
+ 
 
     
 
