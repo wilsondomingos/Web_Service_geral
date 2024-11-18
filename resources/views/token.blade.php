@@ -67,6 +67,7 @@
               <th scope="col">Utilizador</th>
               <th scope="col">Tempo de Vida</th>
               <th scope="col">Data de Expiração</th>
+              <th scope="col">Estado</th>
 
 
             </tr>
@@ -78,6 +79,15 @@
               <td>{{$us->nome_utilizador}}</td>
               <td>{{$us->tempo_vida}}</td>
               <td>{{$us->data_expiracao}}</td>
+              <td>
+                @if($us->estado==1)
+                Activo
+                @endif
+
+                @if($us->estado==0)
+                Inactivo
+                @endif
+              </td>
               <td>
                 
                 <button type="button" class="btn btn-primary  btn-sm" data-toggle="modal" data-target="#token{{$us->id}}">
@@ -107,7 +117,13 @@
 
                 <div class="modal-body" style="width: 100%;">
               
-                  <p style="width: 100vw;">Token: {{$us->tokem}}</p><br>
+               
+
+
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Tokeb</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="">{{$us->tokem}}</textarea>
+                  </div>
                 </div>
                 <div class="modal-footer">
                   

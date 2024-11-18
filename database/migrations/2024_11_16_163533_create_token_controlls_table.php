@@ -20,6 +20,7 @@ class CreateTokenControllsTable extends Migration
             $table->string('nome_utilizador');
             $table->longText('tokem');
             $table->integer('tempo_vida');
+            $table->integer('estado');
             $table->date('data_expiracao');
             $table->timestamps();
         });

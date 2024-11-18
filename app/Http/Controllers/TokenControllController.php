@@ -45,7 +45,8 @@ class TokenControllController extends Controller
             'nome_utilizador'=>$array2['name'],
             'tokem'=>$token,
             'tempo_vida'=>366,
-            'data_expiracao'=>date('Y-m-d')
+            'estado'=>1,
+            'data_expiracao'=>date('Y-m-d',strtotime("+365 days"))
          ];
          $createToke = \App\TokenControll::create($tok);
         

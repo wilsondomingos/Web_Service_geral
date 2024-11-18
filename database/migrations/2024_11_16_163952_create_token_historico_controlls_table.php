@@ -21,6 +21,7 @@ class CreateTokenHistoricoControllsTable extends Migration
             $table->string('tokem');
             $table->integer('tempo_vida');
             $table->date('data_expiracao');
+            $table->integer('estado');
             $table->unsignedBigInteger('token_controll_id')->nullable();
             $table->foreign('token_controll_id')->references('id')->on('token_controlls')->onDelete('cascade')->onUpdate('cascade')->nullable();
             $table->timestamps();
