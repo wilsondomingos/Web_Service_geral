@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use DB;
 use Auth;
 use App\UserServico;
+use Illuminate\Support\Facades\Http;
 class TokenControllController extends Controller
 {
 
@@ -51,6 +52,19 @@ class TokenControllController extends Controller
          $createToke = \App\TokenControll::create($tok);
         
          return redirect()->back();
+    }
+
+    public function desativar(Request $request){
+        
+        $token = $request->token;
+        $response = Http::withHeaders([ 'Authorization' => 'Bearer '.$token, 'Accept' => 'application/json', ])->get('http://127.0.0.1:8000/api/v1/logout');
+
+
+        $data = $response->json(); // Converte a resposta JSON em array associativo return $data;
+
+        dd( $data );
+
+        return redirect()->back();
     }
 
     /**

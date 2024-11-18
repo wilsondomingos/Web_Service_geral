@@ -94,9 +94,17 @@
                  Token
                 </button></td>
              
-              <td><a href="associar_utilizadores/{{$us->id}}" class="btn btn-secondary btn-sm">Actualizar Token</a>
+              <td><a href="atualizar/{{$us->id}}" class="btn btn-primary  btn-sm">Actualizar Token</a>
               </td>
-              <td><a href="associar_utilizadores/{{$us->id}}" class="btn btn-secondary btn-sm">Desactivar Token</a>
+              <td>
+                
+                <form method="POST" action="{{ asset('desativar') }}">
+                  @csrf
+                  
+                  <input type="hidden" name="token" value="{{$us->tokem}}">
+                  <button type="submit" class="btn btn-primary  btn-sm">Desactivar Token</button>
+                </form>
+              
               </td>
             </tr>
 

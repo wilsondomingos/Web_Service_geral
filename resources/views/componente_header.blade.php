@@ -55,8 +55,8 @@
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                 @if(Auth::user()->papal_id==1)
               <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('registar_utilizadore')}}">Registar utilizadores</a></li>
-              <li class="nav-item"><a class="nav-link" aria-current="page" href="{{asset('Adicionar_servico_utilizadore')}}">Associar serviço</a></li>
-              <li class="nav-item"><a class="nav-link" aria-current="page" href="{{asset('token')}}">Token</a></li>
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{asset('Adicionar_servico_utilizadore')}}">Associar serviço</a></li>
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{asset('token')}}">Token</a></li>
               @endif
               
            
@@ -64,7 +64,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link active" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
@@ -73,7 +73,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 

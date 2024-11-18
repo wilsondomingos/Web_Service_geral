@@ -30,6 +30,9 @@ Route::get('/home', 'HomeController@index')->name('home')->Middleware('auth');
 
 Route::get('token', 'TokenControllController@token')->name('token')->Middleware('auth');
 Route::post('gerarToken', 'TokenControllController@gerarToken')->name('gerarToken')->Middleware('auth');
+Route::post('desativar', 'TokenControllController@desativar')->name('desativar')->Middleware('auth');
+
+
 
 
 
